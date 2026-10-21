@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Generador local de contraseñas con opciones configurables.">
+  <title>ClaveSegura | Generador de contraseñas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="brand-mark" aria-hidden="true">✓</div>
+      <p class="eyebrow">HERRAMIENTA DE SEGURIDAD</p>
+      <h1>ClaveSegura</h1>
+      <p class="subtitle">Crea contraseñas aleatorias según tus criterios.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="config-title">
+      <h2 id="config-title">Configura tu contraseña</h2>
+      <div class="length-row">
+        <label for="length">Longitud</label>
+        <output id="length-output" for="length">16</output>
+      </div>
+      <input id="length" type="range" min="8" max="64" value="16">
+      <div class="range-labels"><span>8 caracteres</span><span>64 caracteres</span></div>
+
+      <fieldset class="options">
+        <legend>Tipos de caracteres</legend>
+        <label class="option"><input id="uppercase" type="checkbox" checked> <span><b>ABC</b> Mayúsculas</span></label>
+        <label class="option"><input id="lowercase" type="checkbox" checked> <span><b>abc</b> Minúsculas</span></label>
+        <label class="option"><input id="numbers" type="checkbox" checked> <span><b>123</b> Números</span></label>
+        <label class="option"><input id="symbols" type="checkbox" checked> <span><b>!@#</b> Símbolos</span></label>
+      </fieldset>
+
+      <button id="generate" class="primary" type="button">Generar contraseña</button>
+      <p id="error" class="message error" role="alert" aria-live="polite"></p>
+
+      <div class="result">
+        <label for="password">Tu contraseña</label>
+        <div class="password-row">
+          <input id="password" type="text" readonly autocomplete="off" spellcheck="false" placeholder="Pulsa “Generar contraseña”" aria-describedby="status">
+          <button id="copy" class="secondary" type="button">Copiar</button>
+        </div>
+        <div class="result-meta">
+          <span id="status" role="status" aria-live="polite">No se ha generado una contraseña.</span>
+          <span id="counter">0 caracteres</span>
+        </div>
+      </div>
+      <p class="privacy-note">La contraseña se genera en este navegador. Esta página no la envía a un servidor ni la guarda.</p>
+    </section>
+    <footer>Proyecto académico · Calidad de Software · SENA</footer>
+  </main>
+</body>
+</html>
